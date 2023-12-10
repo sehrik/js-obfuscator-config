@@ -1,0 +1,22 @@
+{
+  "name": "obfusc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "magic-test": "node ./obfuscated/index.js",
+    "build-single-file": "ncc build . -o single_out",
+    "soft-dir":"javascript-obfuscator ./dist --output ./obfuscated",
+    "dir":"javascript-obfuscator ./dist --output ./obfuscated --config obsf.config.json",
+    "base":"javascript-obfuscator single_out/index.js --compact true --self-defending true --output ./obfuscated",
+    "hard":"javascript-obfuscator single_out/index.js --output ./obfuscated --config obsf.config.json",
+    "magic":"npm run build-single-file && npm run hard && npm run magic-test"
+  },
+  "dependencies": {
+    "@vercel/ncc": "^0.38.1",
+    "javascript-obfuscator": "^4.1.0"
+  }  ,
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
