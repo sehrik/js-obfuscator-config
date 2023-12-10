@@ -1,6 +1,6 @@
 # js-obfuscator-config
 
-pull all of your source file in /dist folder.
+put all of your source file in /dist folder.
 
 entry file name should be index.js
 
